@@ -19,42 +19,35 @@
  Boston, MA 02111-1307, USA.
  
 -->
-<language id="docker" _name="Docker" version="0.0" _section="Scripts">
+<language id="docker" _name="Dockerfile" version="2.0" _section="Scripts">
     <metadata>
         <property name="mimetypes">application/docker;text/docker</property>
         <property name="globs">*.docker</property>
     </metadata>
  
     <styles>
-        <style id="docker-function" _name="Docker Function" map-to="def:keyword"/>
+        <style id="docker-keyword" _name="Docker Keyword" map-to="def:keywords"/>
     </styles>
  
     <definitions>
-        <define-regex id="functionname">(FROM|MAINTAINER|RUN|ADD|CMD|ENTRYPOINT|EXPOSE|ENV|VOLUME|USER|WORKDIR)</define-regex>
- 
-        <context id="mako-function-start-tag">
-            <start>{dockerfunctionname}(?!/)</start>
-            <end>[ ]</end>
-            <include>
-                <context sub-pattern="0" where="start" style-ref="docker-function"/>
-                <context sub-pattern="0" where="end" style-ref="docker-function"/>
-                <context ref="xml:entity"/>
-                <context ref="xml:character-reference"/>
-                <context ref="xml:unallowed-chars"/>
-                <context ref="xml:namespace"/>
-                <context ref="xml:element-name"/>
-                <context ref="xml:attribute-name"/>
-                <context ref="xml:attribute-value"/>
-                <context style-ref="xml:error" extend-parent="false">
-                    <match>\S</match>
-                </context>
-            </include>
-        </context>
+     <context id="keywords" style-ref="docker-keyword">
+         <keyword>FROM</keyword>
+         <keyword>MAINTAINER</keyword>
+         <keyword>RUN</keyword>
+         <keyword>ADD</keyword>
+         <keyword>CMD</keyword>
+         <keyword>ENTRYPOINT</keyword>
+         <keyword>EXPOSE</keyword>
+         <keyword>ENV</keyword>
+         <keyword>VOLUME</keyword>
+         <keyword>USER</keyword>
+         <keyword>WORKDIR</keyword>
+     </context>
+
 
         <context id="docker">
             <include>
-                <context ref="html:html"/>
-                <context ref="docker-block"/>
+                <context ref="keywords"/>
             </include>
         </context>
     </definitions>

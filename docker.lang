@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+ Authors: Jasper van den Bosch <jasperb@uw.edu>
+ Copyright (C) 2007 Nobody
+ 
+ This library is free software; you can redistribute it and/or
+ modify it under the terms of the GNU Library General Public
+ License as published by the Free Software Foundation; either
+ version 2 of the License, or (at your option) any later version.
+ 
+ This library is distributed in the hope that it will be useful,
+ but WITHOUT ANY WARRANTY; without even the implied warranty of
+ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+ Library General Public License for more details.
+ 
+ You should have received a copy of the GNU Library General Public
+ License along with this library; if not, write to the
+ Free Software Foundation, Inc., 59 Temple Place - Suite 330,
+ Boston, MA 02111-1307, USA.
+ 
+-->
+<language id="docker" _name="Docker" version="0.0" _section="Scripts">
+    <metadata>
+        <property name="mimetypes">application/docker;text/docker</property>
+        <property name="globs">*.docker</property>
+    </metadata>
+ 
+    <styles>
+        <style id="docker-function" _name="Docker Function" map-to="def:keyword"/>
+    </styles>
+ 
+    <definitions>
+        <define-regex id="functionname">(FROM|MAINTAINER|RUN|ADD|CMD|ENTRYPOINT|EXPOSE|ENV|VOLUME|USER|WORKDIR)</define-regex>
+ 
+        <context id="mako-function-start-tag">
+            <start>{dockerfunctionname}(?!/)</start>
+            <end>[ ]</end>
+            <include>
+                <context sub-pattern="0" where="start" style-ref="docker-function"/>
+                <context sub-pattern="0" where="end" style-ref="docker-function"/>
+                <context ref="xml:entity"/>
+                <context ref="xml:character-reference"/>
+                <context ref="xml:unallowed-chars"/>
+                <context ref="xml:namespace"/>
+                <context ref="xml:element-name"/>
+                <context ref="xml:attribute-name"/>
+                <context ref="xml:attribute-value"/>
+                <context style-ref="xml:error" extend-parent="false">
+                    <match>\S</match>
+                </context>
+            </include>
+        </context>
+
+        <context id="docker">
+            <include>
+                <context ref="html:html"/>
+                <context ref="docker-block"/>
+            </include>
+        </context>
+    </definitions>
+</language>

@@ -30,20 +30,19 @@
     </styles>
  
     <definitions>
-     <context id="keywords" style-ref="docker-keyword">
-         <keyword>FROM</keyword>
-         <keyword>MAINTAINER</keyword>
-         <keyword>RUN</keyword>
-         <keyword>ADD</keyword>
-         <keyword>CMD</keyword>
-         <keyword>ENTRYPOINT</keyword>
-         <keyword>EXPOSE</keyword>
-         <keyword>ENV</keyword>
-         <keyword>VOLUME</keyword>
-         <keyword>USER</keyword>
-         <keyword>WORKDIR</keyword>
-     </context>
-
+        <context id="keywords" style-ref="docker-keyword">
+            <keyword>FROM</keyword>
+            <keyword>MAINTAINER</keyword>
+            <keyword>RUN</keyword>
+            <keyword>ADD</keyword>
+            <keyword>CMD</keyword>
+            <keyword>ENTRYPOINT</keyword>
+            <keyword>EXPOSE</keyword>
+            <keyword>ENV</keyword>
+            <keyword>VOLUME</keyword>
+            <keyword>USER</keyword>
+            <keyword>WORKDIR</keyword>
+        </context>
 
         <context id="docker">
             <include>

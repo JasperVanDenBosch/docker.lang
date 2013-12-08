@@ -22,7 +22,7 @@
 <language id="docker" _name="Dockerfile" version="2.0" _section="Scripts">
     <metadata>
         <property name="mimetypes">application/docker;text/docker</property>
-        <property name="globs">*.docker</property>
+        <property name="globs">Dockerfile</property>
     </metadata>
  
     <styles>

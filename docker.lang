@@ -27,6 +27,7 @@
  
     <styles>
         <style id="docker-keyword" _name="Docker Keyword" map-to="def:keyword"/>
+        <style id="docker-comment" _name="Comment" map-to="def:comment"/>
     </styles>
  
     <definitions>
@@ -43,10 +44,15 @@
             <keyword>USER</keyword>
             <keyword>WORKDIR</keyword>
         </context>
+        <context id="comment" end-at-line-end="true" style-ref="docker-comment">
+          <start>#</start>
+          <end>$</end>
+        </context>
 
         <context id="docker">
             <include>
                 <context ref="keywords"/>
+                <context ref="comment"/>
             </include>
         </context>
     </definitions>

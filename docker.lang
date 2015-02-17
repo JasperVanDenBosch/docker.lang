@@ -35,14 +35,16 @@
             <keyword>FROM</keyword>
             <keyword>MAINTAINER</keyword>
             <keyword>RUN</keyword>
-            <keyword>ADD</keyword>
             <keyword>CMD</keyword>
-            <keyword>ENTRYPOINT</keyword>
             <keyword>EXPOSE</keyword>
             <keyword>ENV</keyword>
+            <keyword>ADD</keyword>
+            <keyword>COPY</keyword>
+            <keyword>ENTRYPOINT</keyword>
             <keyword>VOLUME</keyword>
             <keyword>USER</keyword>
             <keyword>WORKDIR</keyword>
+            <keyword>ONBUILD</keyword>
         </context>
         <context id="comment" end-at-line-end="true" style-ref="docker-comment">
           <start>#</start>

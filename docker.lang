@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--
- Authors: Jasper van den Bosch <jasperb@uw.edu>
+ Authors: Jasper van den Bosch <jasperb@uw.edu>, Thomas F. Duellmann <duelle@autistici.org>
  Copyright (C) 2007 Nobody
  
  This library is free software; you can redistribute it and/or
@@ -43,6 +43,9 @@
             <keyword>VOLUME</keyword>
             <keyword>USER</keyword>
             <keyword>WORKDIR</keyword>
+            <keyword>LABEL</keyword>
+            <keyword>COPY</keyword>
+            <keyword>ONBUILD</keyword>
         </context>
         <context id="comment" end-at-line-end="true" style-ref="docker-comment">
           <start>#</start>

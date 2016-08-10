@@ -37,6 +37,7 @@
             <keyword>RUN</keyword>
             <keyword>ADD</keyword>
             <keyword>CMD</keyword>
+            <keyword>LABEL</keyword>
             <keyword>COPY</keyword>
             <keyword>ENTRYPOINT</keyword>
             <keyword>EXPOSE</keyword>
@@ -44,6 +45,11 @@
             <keyword>VOLUME</keyword>
             <keyword>USER</keyword>
             <keyword>WORKDIR</keyword>
+            <keyword>ARG</keyword>
+            <keyword>ONBUILD</keyword>
+            <keyword>STOPSIGNAL</keyword>
+            <keyword>HEALTHCHECK</keyword>
+            <keyword>SHELL</keyword>
         </context>
         <context id="comment" end-at-line-end="true" style-ref="docker-comment">
           <start>#</start>

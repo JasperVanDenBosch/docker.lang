@@ -37,6 +37,7 @@
             <keyword>RUN</keyword>
             <keyword>ADD</keyword>
             <keyword>CMD</keyword>
+            <keyword>COPY</keyword>
             <keyword>ENTRYPOINT</keyword>
             <keyword>EXPOSE</keyword>
             <keyword>ENV</keyword>
